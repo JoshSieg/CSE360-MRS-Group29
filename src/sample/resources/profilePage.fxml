@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resources.ProfilePage">
+   <children>
+      <VBox layoutX="470.0" layoutY="149.0" prefHeight="102.0" prefWidth="100.0">
+         <children>
+            <TextField fx:id="heightField" />
+            <TextField fx:id="weightField" />
+            <TextField fx:id="bodyTempField" />
+            <TextField fx:id="bloodPreasureField" />
+         </children>
+      </VBox>
+      <VBox layoutX="354.0" layoutY="149.0" prefHeight="102.0" prefWidth="116.0">
+         <children>
+            <VBox prefHeight="0.0" prefWidth="116.0" />
+            <Label prefHeight="25.0" prefWidth="87.0" text="Edit Height:" />
+            <Label prefHeight="26.0" prefWidth="101.0" text="Edit Weight:" />
+            <Label prefHeight="26.0" prefWidth="110.0" text="Edit Body Temp:" />
+            <Label prefHeight="26.0" prefWidth="116.0" text="Edit Blood Preasure:" />
+         </children>
+      </VBox>
+      <Label layoutX="236.0" layoutY="47.0" text="Profile Page" textFill="#2962c3">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <VBox layoutX="200.0" layoutY="149.0" prefHeight="102.0" prefWidth="100.0">
+         <children>
+            <TextField />
+            <TextField />
+            <TextField />
+            <TextField />
+         </children>
+      </VBox>
+      <VBox layoutX="100.0" layoutY="149.0" prefHeight="102.0" prefWidth="100.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="100.0" text="Height" />
+            <Label prefHeight="25.0" prefWidth="100.0" text="Weight" />
+            <Label prefHeight="24.0" prefWidth="100.0" text="Body Temp" />
+            <Label prefHeight="26.0" prefWidth="100.0" text="Blood Preasure" />
+         </children>
+      </VBox>
+      <Button fx:id="backButton" layoutX="470.0" layoutY="52.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
+      <Button fx:id="saveChangesButton" layoutX="470.0" layoutY="279.0" mnemonicParsing="false" text="Save Changes" />
+   </children>
+</AnchorPane>
