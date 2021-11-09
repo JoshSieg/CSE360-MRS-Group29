@@ -26,7 +26,4 @@ public class LoginPageController {
         sc.switchToAccountCreationPage(event);
     }
 
-    public void handleForgotPasswordButton() {
-        System.out.println("clicked forgot password");
-    }
 }

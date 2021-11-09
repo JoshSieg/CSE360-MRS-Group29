@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resources.AddNewVisitPage">
+   <children>
+      <Label layoutX="250.0" layoutY="32.0" text="New Visit" textFill="#1427f8">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Button fx:id="addNewVisitButton" layoutX="434.0" layoutY="235.0" mnemonicParsing="false" onAction="#handleAddNewVisitButton" text="Add New Visit" />
+      <Button fx:id="backButton" layoutX="480.0" layoutY="37.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
+      <VBox layoutX="250.0" layoutY="100.0" prefHeight="154.0" prefWidth="100.0">
+         <children>
+            <TextField fx:id="timeOfVisitField" />
+            <TextField fx:id="heightField" />
+            <TextField fx:id="weightField" prefHeight="26.0" prefWidth="96.0" />
+            <TextField fx:id="bodyTempField" />
+            <TextField fx:id="bloodPreasureField" />
+            <TextField fx:id="reasonOfVisitField" />
+         </children>
+      </VBox>
+      <VBox layoutX="150.0" layoutY="100.0" prefHeight="154.0" prefWidth="100.0">
+         <children>
+            <Label prefHeight="27.0" prefWidth="100.0" text="Time of Visit:" />
+            <Label prefHeight="24.0" prefWidth="99.0" text="Height:" />
+            <Label prefHeight="27.0" prefWidth="100.0" text="Weight:" />
+            <Label prefHeight="25.0" prefWidth="100.0" text="Body Temp:" />
+            <Label prefHeight="25.0" prefWidth="100.0" text="Blood Preasure" />
+            <Label prefHeight="25.0" prefWidth="100.0" text="Reason of Visit:" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
