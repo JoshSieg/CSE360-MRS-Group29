@@ -30,4 +30,28 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchToNewVisitPage(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("resources/newVisitPage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToPasswordChangePage(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("resources/passwordChangePage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToProfilePage(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("resources/profilePage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
