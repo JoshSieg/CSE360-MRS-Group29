@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resources.doctorPageController">
+   <children>
+      <Button fx:id="scheduleButton" layoutX="24.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleSchedule" text="Schedule" />
+      <Button fx:id="patientSearchButton" layoutX="89.0" layoutY="27.0" mnemonicParsing="false" onAction="#handlePatientSearch" text="Patient Search" />
+      <TextField fx:id="dateField" layoutX="24.0" layoutY="76.0" promptText="Enter Date" />
+      <TextArea layoutX="308.0" layoutY="111.0" prefHeight="200.0" prefWidth="251.0" />
+      <Button fx:id="viewLastVisitButton" layoutX="460.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleViewLastVisit" text="View Last Visit">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="goPatientPageButton" layoutX="433.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleToPatientPage" text="Go to Patient Page" />
+      <ScrollPane layoutX="24.0" layoutY="111.0" prefHeight="200.0" prefWidth="213.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <Button fx:id="logoutButton" layoutX="537.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="Logout" />
+   </children>
+</AnchorPane>
