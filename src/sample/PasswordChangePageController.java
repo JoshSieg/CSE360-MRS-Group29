@@ -26,13 +26,13 @@ public class PasswordChangePageController {
     }
 
     public void handleBackButton (ActionEvent event) throws IOException {
-        if(patient) {
-            sc.switchToPatientPage(event);
-        } else if(nurse) {
-            sc.switchToNursePage(event);
-        } else
-            sc.switchToDoctorPage(event);
-        }
+//         if(patient) {
+//             sc.switchToPatientPage(event);
+//         } else if(nurse) {
+//             sc.switchToNursePage(event);
+//         } else
+//             sc.switchToDoctorPage(event);
+//         }
     }
 
 }
