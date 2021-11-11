@@ -21,7 +21,7 @@ public class NewVisitPageController {
     public SceneController sc = new SceneController();
 
     public void handleBackButton (ActionEvent event) throws IOException {
-        sc.switchToNursePage(event);
+        //sc.switchToNursePage(event);
     }
     public void handleAddNewVisitButton () {
         System.out.println("Added New Visit");
