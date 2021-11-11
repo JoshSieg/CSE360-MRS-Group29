@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resources.AddNewVisitPage">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NewVisitPageController">
    <children>
       <Label layoutX="250.0" layoutY="32.0" text="New Visit" textFill="#1427f8">
          <font>
@@ -19,7 +19,7 @@
             <TextField fx:id="weightField" prefHeight="26.0" prefWidth="96.0" />
             <TextField fx:id="bodyTempField" />
             <TextField fx:id="bloodPreasureField" />
-            <TextField fx:id="reasonOfVisitField" />
+            <TextField fx:id="reasonOfVisitField" prefHeight="20.0" prefWidth="100.0" />
          </children>
       </VBox>
       <VBox layoutX="150.0" layoutY="100.0" prefHeight="154.0" prefWidth="100.0">

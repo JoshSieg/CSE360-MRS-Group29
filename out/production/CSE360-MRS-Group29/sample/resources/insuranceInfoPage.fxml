@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.InsuranceInfoPageController">
+   <children>
+      <Button fx:id="backButton" layoutX="545.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-radius: 5;" text="Back" />
+      <Label layoutX="53.0" layoutY="37.0" prefHeight="43.0" prefWidth="276.0" text="Insurance Information" textFill="#1427f8">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <VBox layoutX="53.0" layoutY="111.0" prefHeight="192.0" prefWidth="478.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="64.0" prefWidth="144.0" text="Insurance Provider:" />
+                  <TextField fx:id="insuranceProvider" editable="false" prefHeight="25.0" prefWidth="230.0">
+                     <HBox.margin>
+                        <Insets left="10.0" top="21.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="providerButton" mnemonicParsing="false" onAction="#handleProviderButton" text="Edit">
+                     <HBox.margin>
+                        <Insets left="20.0" top="21.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="64.0" prefWidth="144.0" text="Health Plan Number" />
+                  <TextField fx:id="healthPlanNumber" editable="false" prefHeight="25.0" prefWidth="230.0">
+                     <HBox.margin>
+                        <Insets left="10.0" top="21.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="planNumberButton" mnemonicParsing="false" onAction="#handlePlanNumberButton" text="Edit">
+                     <HBox.margin>
+                        <Insets left="20.0" top="21.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="122.0" prefWidth="144.0" text="Member ID:" />
+                  <TextField fx:id="memberID" editable="false" prefHeight="25.0" prefWidth="230.0">
+                     <HBox.margin>
+                        <Insets left="10.0" top="21.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="IDButton" mnemonicParsing="false" onAction="#handleIDButton" text="Edit">
+                     <HBox.margin>
+                        <Insets left="20.0" top="21.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

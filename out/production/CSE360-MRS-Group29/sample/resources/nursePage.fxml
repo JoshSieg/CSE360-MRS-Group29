@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.nursePageController">
+   <children>
+      <Button fx:id="patientSearchButton" layoutX="318.0" layoutY="68.0" mnemonicParsing="false" onAction="#handlePatientSearch" text="Patient Search" />
+      <Button fx:id="editViewProfileButton" layoutX="318.0" layoutY="103.0" mnemonicParsing="false" onAction="#handleViewProfile" text="Edit and View Profile" />
+      <Button fx:id="scheduleButton" layoutX="318.0" layoutY="136.0" mnemonicParsing="false" onAction="#handleScheduleAppointment" text="Schedule and View Appointment" />
+      <Button fx:id="pharmacyInfoButton" layoutX="318.0" layoutY="171.0" mnemonicParsing="false" onAction="#handlePharmacyInfo" text="Edit and View Pharmacy Info" />
+      <Button fx:id="labResultsButton" layoutX="318.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleLabResults" text="Lab Results" />
+      <Label layoutX="20.0" layoutY="34.0" text="Patient Info" textFill="#1427f8">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <ScrollPane layoutX="20.0" layoutY="68.0" prefHeight="276.0" prefWidth="279.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="275.0" prefWidth="278.0" />
+        </content>
+      </ScrollPane>
+      <Label layoutX="318.0" layoutY="241.0" prefHeight="36.0" prefWidth="102.0" text="Doctor Info:" textFill="#1427f8">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="logoutButton" layoutX="532.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="Logout" />
+   </children>
+</AnchorPane>
