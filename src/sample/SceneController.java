@@ -17,7 +17,7 @@ public class SceneController {
 
     public void switchToLoginPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("resources/loginPage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -25,7 +25,7 @@ public class SceneController {
 
     public void switchToAccountCreationPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("resources/accountCreationPage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -33,7 +33,7 @@ public class SceneController {
 
     public void switchToNewVisitPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("resources/newVisitPage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -41,7 +41,7 @@ public class SceneController {
 
     public void switchToPasswordChangePage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("resources/passwordChangePage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -49,7 +49,7 @@ public class SceneController {
 
     public void switchToProfilePage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("resources/profilePage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

@@ -19,7 +19,7 @@
             <TextField fx:id="weightField" prefHeight="26.0" prefWidth="96.0" />
             <TextField fx:id="bodyTempField" />
             <TextField fx:id="bloodPreasureField" />
-            <TextField fx:id="reasonOfVisitField" />
+            <TextField fx:id="reasonOfVisitField" prefHeight="20.0" prefWidth="100.0" />
          </children>
       </VBox>
       <VBox layoutX="150.0" layoutY="100.0" prefHeight="154.0" prefWidth="100.0">
