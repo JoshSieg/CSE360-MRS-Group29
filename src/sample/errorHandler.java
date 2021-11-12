@@ -16,10 +16,10 @@ public class errorHandler {
 
         boolean validAcc;
 
-        if(newPassword.length() < 5){   //checking if password is longer than 5
-            System.out.println("invalid password length");
+        if(newPassword.length() >= 5){   //checking if password is longer than 5
              validAcc = true;
         }else{
+            System.out.println("invalid password length");
             validAcc = false;
         }
 
