@@ -1,18 +1,22 @@
 package sample;
 
-public class errorHandler {
+import java.util.ArrayList;
 
+//TODO check inheritance
+public class errorHandler extends User {
+
+    //TODO password check might be moved to accountController
     //error for when user enters invalid login information (will be connected with loginPageController)
     public void invalidLogin(boolean validlogin){
         if(validlogin == false){
-            system.out.println("invalid login try again!");
+            System.out.println("invalid login try again!");
             sc.switchToLoginPage(event); //RETURN TO LOGIN SCREEN
         }
     }
 
     //ACCOUNT CREATION PAGE: error for when users fails to create an account
     //check for valid password inside account creation class
-    public void accountCreationCheck(string newPassword, string newUsername){
+    public void accountCreationCheck(String newPassword, String newUsername){
 
         boolean validAcc;
 
@@ -36,5 +40,21 @@ public class errorHandler {
             //sc.switchToAccountCreation(event); (needs to be made)
         }
     }
+
+    //fixme array passing may need to be modified
+    public boolean checkPatient(String aPatient, ArrayList<Patient> patientList){
+        boolean patientExists = true;
+
+        for(int i = 0; i < patientList.size(); i++){
+            if(aPatient == patientList[i]){     //fixme theres a better way
+                patientExists = true;
+            }else{
+               patientExists = false;
+            }
+        }
+        return patientExists;
+    }
+
+
 
 }   //end of class
