@@ -1,7 +1,7 @@
 package sample;
 
 public class Doctor extends User {
-    public Patient patientList[];
+    public Patient[] patientList;
     public Nurse assignedNurse;
     public int sizeArr;
 
@@ -9,8 +9,8 @@ public class Doctor extends User {
 
     }
 
-    public void setPatientList(Patient patientList[]) {
-        for(int i = 0; i <= patientList[].length; i++) {
+    public void setPatientList(Patient[] patientList) {
+        for(int i = 0; i <= patientList.length; i++) {
             this.patientList[i] = patientList[i];
         }
     }
@@ -19,21 +19,21 @@ public class Doctor extends User {
         assignedNurse = assignedNur;
     }
 
-    public void addPatientToList(Patient patient, Patient patientList[]) {
-        int size = getSizeArr(patientList[]);
+    public void addPatientToList(Patient patient, Patient[] patientList) {
+        int size = getSize(patientList);
         this.patientList[size] = patient;
     }
 
-    public int getSizeArr(Patient patientList[]) {
+    public int getSize(Patient patientList[]) {
         int size = 0;
-        while(patientList[size] != NULL) {
+        while(patientList[size] != null) {
             size++;
         }
         return size;
     }
 
-    public Patient getPatientList() {
-        return patientList[];
+    public Patient[] getPatientList() {
+        return this.patientList;
     }
 
     public String getAssignedNurse() {
