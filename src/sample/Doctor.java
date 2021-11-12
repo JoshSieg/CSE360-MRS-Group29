@@ -1,39 +1,35 @@
 package sample;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Doctor extends User {
-    public Patient[] patientList;
-    public Nurse assignedNurse;
-    public int sizeArr;
+    private ArrayList<Patient> patientList;
+    private Nurse assignedNurse;
 
-    public void Doctor(String name, Nurse assignedNurse) {
-
+    public Doctor(String name, Nurse assignedNurse) {
+        patientList = new ArrayList<Patient>(0);
     }
 
     public void setPatientList(Patient[] patientList) {
-        for(int i = 0; i <= patientList.length; i++) {
-            this.patientList[i] = patientList[i];
-        }
+        Collections.addAll(this.patientList, patientList);
     }
 
-    public void setAssignedNurse(Nurse assignedNur) {
-        assignedNurse = assignedNur;
+    public void setAssignedNurse(Nurse assignedNurse) {
+        this.assignedNurse = assignedNurse;
     }
 
-    public void addPatientToList(Patient patient, Patient[] patientList) {
-        int size = getSize(patientList);
-        this.patientList[size] = patient;
+    public void addPatientToList(Patient patient) {
+        patientList.add(patient);
     }
 
-    public int getSize(Patient patientList[]) {
-        int size = 0;
-        while(patientList[size] != null) {
-            size++;
-        }
-        return size;
+    public int getNumPatients() {
+        return patientList.size();
     }
 
     public Patient[] getPatientList() {
-        return this.patientList;
+        Patient[] tempArr = {};
+        return patientList.toArray(tempArr);
     }
 
     public String getAssignedNurse() {
