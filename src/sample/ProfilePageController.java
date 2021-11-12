@@ -2,8 +2,6 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -12,28 +10,28 @@ public class ProfilePageController {
     public String height;
     public String weight;
     public String bodyTemp;
-    public String bloodPreasure;
+    public String bloodPressure;
 
     public Button saveChangesButton;
     public Button backButton;
     public TextField heightField;
     public TextField weightField;
     public TextField bodyTempField;
-    public TextField bloodPreasureField;
+    public TextField bloodPressureField;
     public SceneController sc = new SceneController();
 
     public void handleSaveChangesButton() {
-        if(heightField != NULL) {
+        if(heightField != null) {
             height = heightField.getText();
         } //else do nothing
-        if(weightField != NULL) {
+        if(weightField != null) {
             weight = weightField.getText();
         } //else do nothing
-        if(bodyTempField != NULL) {
+        if(bodyTempField != null) {
             bodyTemp = bodyTempField.getText();
         } //else do nothing
-        if(bloodPreasureField != NULL) {
-            bloodPreasure = bloodPreasureField.getText();
+        if(bloodPressureField != null) {
+            bloodPressure = bloodPressureField.getText();
         } //else do nothing
         System.out.println("Saved New Patient Info");
     }
@@ -46,6 +44,4 @@ public class ProfilePageController {
 //         } else
 //             sc.switchToDoctorPage(event);
     }
-}
-
 }

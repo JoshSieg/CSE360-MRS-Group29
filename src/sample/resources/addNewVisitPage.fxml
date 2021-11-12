@@ -18,7 +18,7 @@
             <TextField fx:id="heightField" />
             <TextField fx:id="weightField" prefHeight="26.0" prefWidth="96.0" />
             <TextField fx:id="bodyTempField" />
-            <TextField fx:id="bloodPreasureField" />
+            <TextField fx:id="bloodPressureField" />
             <TextField fx:id="reasonOfVisitField" prefHeight="20.0" prefWidth="100.0" />
          </children>
       </VBox>
@@ -28,7 +28,7 @@
             <Label prefHeight="24.0" prefWidth="99.0" text="Height:" />
             <Label prefHeight="27.0" prefWidth="100.0" text="Weight:" />
             <Label prefHeight="25.0" prefWidth="100.0" text="Body Temp:" />
-            <Label prefHeight="25.0" prefWidth="100.0" text="Blood Preasure" />
+            <Label prefHeight="25.0" prefWidth="100.0" text="Blood Pressure" />
             <Label prefHeight="25.0" prefWidth="100.0" text="Reason of Visit:" />
          </children>
       </VBox>
