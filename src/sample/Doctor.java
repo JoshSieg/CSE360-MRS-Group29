@@ -5,12 +5,14 @@ public class Doctor extends User {
     public Nurse assignedNurse;
     public int sizeArr;
 
-    public Doctor(String name, Nurse assignedNurse) {
+    public void Doctor(String name, Nurse assignedNurse) {
 
     }
 
     public void setPatientList(Patient[] patientList) {
-        if (patientList.length + 1 >= 0) System.arraycopy(patientList, 0, this.patientList, 0, patientList.length + 1);
+        for(int i = 0; i <= patientList.length; i++) {
+            this.patientList[i] = patientList[i];
+        }
     }
 
     public void setAssignedNurse(Nurse assignedNur) {
@@ -18,11 +20,11 @@ public class Doctor extends User {
     }
 
     public void addPatientToList(Patient patient, Patient[] patientList) {
-        int size = getSizeArr(patientList);
+        int size = getSize(patientList);
         this.patientList[size] = patient;
     }
 
-    public int getSizeArr(Patient[] patientList) {
+    public int getSize(Patient patientList[]) {
         int size = 0;
         while(patientList[size] != null) {
             size++;
@@ -31,7 +33,7 @@ public class Doctor extends User {
     }
 
     public Patient[] getPatientList() {
-        return patientList;
+        return this.patientList;
     }
 
     public String getAssignedNurse() {
