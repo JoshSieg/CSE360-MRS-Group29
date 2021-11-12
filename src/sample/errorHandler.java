@@ -23,10 +23,10 @@ public class errorHandler {
             validAcc = false;
         }
 
-        if(newUsername.length() < 3){   //checking if username is longer than 3
-            System.out.println("invalid username length");
+        if(newUsername.length() >= 4){   //checking if username is longer than 3
             validAcc = true;
         }else{
+            System.out.println("invalid username length");
             validAcc = false;
         }
 
