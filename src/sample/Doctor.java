@@ -7,7 +7,8 @@ public class Doctor extends User {
     private ArrayList<Patient> patientList;
     private Nurse assignedNurse;
 
-    public Doctor(String name, Nurse assignedNurse) {
+    public Doctor(String name, String username, String password, Nurse assignedNurse) {
+        super(name, username, password);
         patientList = new ArrayList<Patient>(0);
     }
 
@@ -27,9 +28,8 @@ public class Doctor extends User {
         return patientList.size();
     }
 
-    public Patient[] getPatientList() {
-        Patient[] tempArr = {};
-        return patientList.toArray(tempArr);
+    public ArrayList<Patient> getPatientList() {
+        return patientList;
     }
 
     public String getAssignedNurse() {

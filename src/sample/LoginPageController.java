@@ -26,6 +26,7 @@ public class LoginPageController {
         sc.switchToAccountCreationPage(event);
     }
     
-    public void handleForgotPasswordButton(ActionEvent event) {
+    public void handleForgotPasswordButton(ActionEvent event) throws IOException {
+        //sc.switchToPasswordChangePage(event);
     }
 }

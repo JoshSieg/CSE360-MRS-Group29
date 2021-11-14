@@ -1,16 +1,18 @@
 package sample;
 
+import javafx.event.ActionEvent;
+
 import java.util.ArrayList;
 
 //TODO check inheritance
-public class errorHandler extends User {
+public class errorHandler {
+    private SceneController sc = new SceneController();
 
     //TODO password check might be moved to accountController
     //error for when user enters invalid login information (will be connected with loginPageController)
     public void invalidLogin(boolean validlogin){
-        if(validlogin == false){
+        if(!validlogin){
             System.out.println("invalid login try again!");
-            sc.switchToLoginPage(event); //RETURN TO LOGIN SCREEN
         }
     }
 
@@ -34,7 +36,7 @@ public class errorHandler extends User {
             validAcc = false;
         }
 
-        if(validAcc == false){
+        if(!validAcc){
             System.out.println("Invalid account creation parameters try again!");
             //RETURN TO ACCOUNT CREATION PAGE
             //sc.switchToAccountCreation(event); (needs to be made)
@@ -42,17 +44,14 @@ public class errorHandler extends User {
     }
 
     //fixme array passing may need to be modified
-    public boolean checkPatient(String aPatient, ArrayList<Patient> patientList){
-        boolean patientExists = true;
-
-        for(int i = 0; i < patientList.size(); i++){
-            if(aPatient == patientList[i]){     //fixme theres a better way
-                patientExists = true;
-            }else{
-               patientExists = false;
+    public Patient checkPatient(String aPatient, ArrayList<Patient> patientList){
+        Patient searchedPatient = null;
+        for (Patient patient : patientList) {
+            if (patient.getName().equals(aPatient)) {
+                searchedPatient = patient;
             }
         }
-        return patientExists;
+        return searchedPatient;
     }
 
 

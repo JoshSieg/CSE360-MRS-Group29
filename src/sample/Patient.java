@@ -1,19 +1,16 @@
 package sample;
 
+import java.util.ArrayList;
+
 public class Patient extends User{
-    public float height; //in feet
-    public float weight; //in lbs
-    public float bodyTemp; //in farheneit
-    public float bloodPressure;
+    private ArrayList<Visit> visits;
 
     public Doctor assignedDoctor;
     public Nurse assignedNurse;
 
-    Patient(float height, float weight, float bodyTemp, float bloodPressure) {
-        this.height = height;
-        this.weight = weight;
-        this.bodyTemp = bodyTemp;
-        this.bloodPressure = bloodPressure;
+    Patient(String name, String username, String password) {
+        super(name, username, password);
+        visits = new ArrayList<Visit>();
     }
 
     public void setAssignedDoctor(Doctor assignedDoc) {
@@ -32,4 +29,8 @@ public class Patient extends User{
         return assignedNurse.getName();
     }
 
+    public void newVisit(float height, float weight, float bodyTemp, float bloodPressure) {
+        Visit newVisit = new Visit(height, weight, bodyTemp, bloodPressure);
+        visits.add(newVisit);
+    }
 }

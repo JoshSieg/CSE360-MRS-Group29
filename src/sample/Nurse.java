@@ -1,40 +1,24 @@
 package sample;
 
+import java.util.ArrayList;
+
 public class Nurse extends User {
+    public ArrayList<Doctor> assignedDoctors;
 
-    public Patient[] patientList;
-    public Patient assignedPatient;
-    public int sizeArr;
+    public Nurse(String name, String username, String password) {
+        super(name, username, password);
+        assignedDoctors = new ArrayList<Doctor>();
+    }
 
-    public void setPatientList(Patient[] patientList) {
-        for(int i = 0; i <= patientList.length; i++) {
-            this.patientList[i] = patientList[i];
+    public void assignToDoctor(Doctor doctor) {
+        assignedDoctors.add(doctor);
+    }
+
+    public ArrayList<Patient> getPatientList() {
+        ArrayList<Patient> allPatients = new ArrayList<Patient>();
+        for (Doctor doctor:assignedDoctors) {
+            allPatients.addAll(doctor.getPatientList());
         }
+        return allPatients;
     }
-
-    public void setAssignedPatient(Patient aPatient) {
-        assignedPatient = aPatient;
-    }
-
-    public void addPatientToList(Patient patient, Patient[] patientList) {
-        int size = getSize(patientList);
-        this.patientList[size] = patient;
-    }
-
-    public int getSize(Patient patientList[]) {
-        int size = 0;
-        while(patientList[size] != null) {
-            size++;
-        }
-        return size;
-    }
-
-    public Patient[] getPatientList() {
-        return this.patientList;
-    }
-
-    public String getPatient() {
-        return assignedPatient.getName();
-    }
-
 }
