@@ -4,16 +4,16 @@ public class Patient extends User{
     public float height; //in feet
     public float weight; //in lbs
     public float bodyTemp; //in farheneit
-    public float bloodPreasure;
+    public float bloodPressure;
 
     public Doctor assignedDoctor;
     public Nurse assignedNurse;
 
-    Patient(float height, float weight, float bodyTemp, float bloodPreasure) {
+    Patient(float height, float weight, float bodyTemp, float bloodPressure) {
         this.height = height;
         this.weight = weight;
         this.bodyTemp = bodyTemp;
-        this.bloodPreasure = bloodPreasure;
+        this.bloodPressure = bloodPressure;
     }
 
     public void setAssignedDoctor(Doctor assignedDoc) {
