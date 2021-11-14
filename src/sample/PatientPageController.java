@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class patientPageController {
+public class PatientPageController {
 
     public Button editViewProfileButton;
     public Button scheduleButton;
