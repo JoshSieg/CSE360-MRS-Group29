@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import java.util.ArrayList;
 
 //TODO check inheritance
-public class errorHandler {
+public class ErrorHandler {
     private SceneController sc = new SceneController();
 
     //TODO password check might be moved to accountController
