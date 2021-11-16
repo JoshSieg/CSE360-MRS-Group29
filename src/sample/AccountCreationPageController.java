@@ -24,7 +24,7 @@ public class AccountCreationPageController {
     public Button backButton;
     public ComboBox chooseUserType;
     public SceneController sc = new SceneController();
-    ObservableList<String> userTypeList = FXCollections.observableArrayList(new String[]{"Patient", "Nurse", "Doctor"});
+    ObservableList<String> userTypeList = FXCollections.observableArrayList("Patient", "Nurse", "Doctor");
 
     public AccountCreationPageController() {
     }
@@ -36,24 +36,24 @@ public class AccountCreationPageController {
     }
 
     public void handleCreateAccountButton() {
-        String firstName = this.firstNameField.getText();
-        String lastName = this.lastNameField.getText();
-        if (this.isNumeric(this.monthField.getText())) {
-            int month = Integer.parseInt(this.monthField.getText());
+        String firstName = firstNameField.getText();
+        String lastName = lastNameField.getText();
+        if (isNumeric(monthField.getText())) {
+            int month = Integer.parseInt(monthField.getText());
         }
 
-        if (this.isNumeric(this.dayField.getText())) {
-            int day = Integer.parseInt(this.dayField.getText());
+        if (isNumeric(dayField.getText())) {
+            int day = Integer.parseInt(dayField.getText());
         }
 
-        if (this.isNumeric(this.yearField.getText())) {
-            int year = Integer.parseInt(this.yearField.getText());
+        if (isNumeric(yearField.getText())) {
+            int year = Integer.parseInt(yearField.getText());
         }
 
-        String username = this.usernameField.getText();
-        String password = this.passwordField.getText();
-        String confirmPassword = this.confirmPasswordField.getText();
-        String userType = (String)this.chooseUserType.getSelectionModel().getSelectedItem();
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+        String confirmPassword = confirmPasswordField.getText();
+        String userType = (String)chooseUserType.getSelectionModel().getSelectedItem();
         if (firstName.equals("") || lastName.equals("") || username.equals("") || password.equals("") || confirmPassword.equals("") || userType.equals("")) {
             this.errorLabel.setText("One or more fields not complete. Please fill in all fields.");
         }
