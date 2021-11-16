@@ -1,9 +1,6 @@
 package sample;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class DataManager {
 
@@ -12,7 +9,8 @@ public class DataManager {
     public void readFromFile(String filepath) {
         try {
             UserManager.clearAll();
-            FileInputStream fileIn = new FileInputStream(filepath);
+            File file = new File(filepath);
+            FileInputStream fileIn = new FileInputStream(file);
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
             int numPatients = objectIn.readInt();
             int numDoctors = objectIn.readInt();
@@ -34,13 +32,22 @@ public class DataManager {
     //saves objects from user manager array lists into the given file path
     public void saveToFile(String filepath) {
         try {
-            FileOutputStream fileOut = new FileOutputStream(filepath);
+            File file = new File(filepath);
+            if(file.delete() || !file.isFile()) {
+                file.createNewFile();
+            } else {
+                throw new Exception();
+            }
+            FileOutputStream fileOut = new FileOutputStream(file);
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             int numPatients = UserManager.getAllPatients().size();
             int numDoctors = UserManager.getAllDoctors().size();
             int numNurses = UserManager.getAllNurses().size();
+            System.out.println(numPatients);
             objectOut.writeInt(numPatients);
+            System.out.println(numDoctors);
             objectOut.writeInt(numDoctors);
+            System.out.println(numNurses);
             objectOut.writeInt(numNurses);
             for (Patient patient : UserManager.getAllPatients()) {
                 objectOut.writeObject(patient);

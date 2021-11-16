@@ -18,9 +18,9 @@ public class Main extends Application {
         //load data into user manager when program is opened, but only if the data exists
         DataManager dm = new DataManager();
         try {
-            File userData = new File("resources/userData.txt");
+            File userData = new File("src/sample/resources/userData.txt");
             if(userData.isFile()) {
-                dm.readFromFile("resources/userData.txt");
+                dm.readFromFile("src/sample/resources/userData.txt");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -33,7 +33,7 @@ public class Main extends Application {
         //save data into storage file on application close
         DataManager dm = new DataManager();
         try {
-            dm.saveToFile("resources/userData.txt");
+            dm.saveToFile("src/sample/resources/userData.txt");
         } catch (Exception e) {
             e.printStackTrace();
         }
