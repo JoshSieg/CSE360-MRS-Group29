@@ -8,9 +8,7 @@
    <children>
       <Button fx:id="patientSearchButton" layoutX="318.0" layoutY="68.0" mnemonicParsing="false" onAction="#handlePatientSearch" text="Patient Search" />
       <Button fx:id="editViewProfileButton" layoutX="318.0" layoutY="103.0" mnemonicParsing="false" onAction="#handleViewProfile" text="Edit and View Profile" />
-      <Button fx:id="scheduleButton" layoutX="318.0" layoutY="136.0" mnemonicParsing="false" onAction="#handleScheduleAppointment" text="Schedule and View Appointment" />
-      <Button fx:id="pharmacyInfoButton" layoutX="318.0" layoutY="171.0" mnemonicParsing="false" onAction="#handlePharmacyInfo" text="Edit and View Pharmacy Info" />
-      <Button fx:id="labResultsButton" layoutX="318.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleLabResults" text="Lab Results" />
+      <Button fx:id="pharmacyInfoButton" layoutX="318.0" layoutY="137.0" mnemonicParsing="false" onAction="#handlePharmacyInfo" text="Edit and View Pharmacy Info" />
       <Label layoutX="20.0" layoutY="34.0" text="Patient Info" textFill="#1427f8">
          <font>
             <Font size="20.0" />
