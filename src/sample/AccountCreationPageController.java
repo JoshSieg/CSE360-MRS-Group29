@@ -55,7 +55,7 @@ public class AccountCreationPageController {
         String confirmPassword = confirmPasswordField.getText();
         String userType = (String)chooseUserType.getSelectionModel().getSelectedItem();
         if (firstName.equals("") || lastName.equals("") || username.equals("") || password.equals("") || confirmPassword.equals("") || userType.equals("")) {
-            this.errorLabel.setText("One or more fields not complete. Please fill in all fields.");
+            errorLabel.setText("One or more fields not complete. Please fill in all fields.");
         }
 
     }
