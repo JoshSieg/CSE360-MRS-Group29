@@ -14,6 +14,7 @@ public class doctorPageController {
     public Button viewLastVisitButton;
     public Button goPatientPageButton;
 
+
     public SceneController sc = new SceneController();
 
     public void handleLogoutButton(ActionEvent event) throws IOException{
