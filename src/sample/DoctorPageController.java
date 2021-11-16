@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class doctorPageController {
+public class DoctorPageController {
 
     public TextField patientNameField;
     public Button logoutButton; //go to login page (first page)
