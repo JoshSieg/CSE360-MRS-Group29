@@ -6,27 +6,22 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class doctorPageController {
+public class DoctorPageController {
 
-    public TextField dateField;
-
-    public Button scheduleButton;
+    public TextField patientNameField;
     public Button logoutButton; //go to login page (first page)
-    public Button patientSearchButton; //go to patient search page
+    public Button searchPatientButton;
     public Button viewLastVisitButton;
     public Button goPatientPageButton;
 
+
     public SceneController sc = new SceneController();
 
-    public void handleSchedule() {
-        System.out.println("clicked schedule");
-    }
-
-    public void handleLogout(ActionEvent event) throws IOException{
+    public void handleLogoutButton(ActionEvent event) throws IOException{
         sc.switchToLoginPage(event);
     }
 
-    public void handlePatientSearch() {
+    public void handleSearchPatient() {
         System.out.println("clicked patient search");
     }
 
