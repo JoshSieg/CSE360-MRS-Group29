@@ -1,4 +1,7 @@
 package sample;
+
+import java.util.ArrayList;
+
 public class User {
     private String name;
     private String username;

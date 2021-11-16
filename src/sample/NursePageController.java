@@ -18,20 +18,15 @@ public class NursePageController {
     public SceneController sc = new SceneController();
 
     public void handleLogoutButton(ActionEvent event) throws IOException {
-        System.out.println("logged out succesfully");
         sc.switchToLoginPage(event);
     }
-
     public void handlePatientSearch(ActionEvent event) throws IOException {
-        System.out.println("clicked patient search");
         sc.switchToPatientPage(event);
     }
     public void handleViewProfile(ActionEvent event) throws IOException {
-        System.out.println("clicked view profile");
         sc.switchToProfilePage(event);
     }
     public void handlePharmacyInfo(ActionEvent event) throws IOException {
-        System.out.println("clicked pharmacy info");
         sc.switchToPharmacyInfoPage(event);
     }
 }

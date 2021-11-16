@@ -13,9 +13,20 @@ public class UserManager {
         currentUser = user;
     }
 
-    public static User getCurrentUser() {
-        return currentUser;
+    if(currentUser.getClass() = Patient){
+        public static Patient getCurrentUser() {
+            return currentUser;
+        }
+    } else if(currentUser.getClass() = Nurse) {
+        public static Nurse getCurrentUser() {
+            return currentUser;
+        }
+    } else {
+        public static Doctor getCurrentUser() {
+            return currentUser;
+        }
     }
+
 
     public static ArrayList<Patient> getAllPatients() {
         return allPatients;

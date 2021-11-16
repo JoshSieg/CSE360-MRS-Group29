@@ -20,17 +20,14 @@ public class DoctorPageController {
     public void handleLogoutButton(ActionEvent event) throws IOException{
         sc.switchToLoginPage(event);
     }
-
-    public void handleSearchPatient() {
-        System.out.println("clicked patient search");
+    public void handleSearchPatient(ActionEvent event) throws IOException{
+        System.out.println("searched patient");
     }
-
-    public void handleViewLastVisit() {
-        System.out.println("clicked last visit");
+    public void handleViewLastVisit(ActionEvent event) throws IOException {
+        System.out.println("viewed last visit");
     }
-
-    public void handleToPatientPage() {
-        System.out.println("clicked patient page");
+    public void handleToPatientPage(ActionEvent event) throws IOException {
+        sc.switchToPatientPage(event);
     }
 
 }

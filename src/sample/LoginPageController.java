@@ -18,7 +18,7 @@ public class LoginPageController {
     public Hyperlink forgotPasswordButton;
     public SceneController sc = new SceneController();
 
-    public void handleLoginButton() {
+    public void handleLoginButton(ActionEvent event) throws IOException {
         User currentUser = null;
         //check for matching credentials for each of the user types
         for (Patient patient : UserManager.getAllPatients()) {
@@ -40,13 +40,13 @@ public class LoginPageController {
         if (currentUser != null) {
             UserManager.setCurrentUser(currentUser);
             if (UserManager.getCurrentUser().getClass() == Patient.class) {
-                //go to patient page
+                sc.switchToPatientPage(event);
             }
             else if (UserManager.getCurrentUser().getClass() == Doctor.class) {
-                //go to doctor page
+                sc.switchToDoctorPage(event);
             }
             else if (UserManager.getCurrentUser().getClass() == Nurse.class) {
-                //go to nurse page
+                sc.switchToNursePage(event);
             }
         }
     }
@@ -56,6 +56,6 @@ public class LoginPageController {
     }
     
     public void handleForgotPasswordButton(ActionEvent event) throws IOException {
-        //sc.switchToPasswordChangePage(event);
+        sc.switchToPasswordChangePage(event);
     }
 }

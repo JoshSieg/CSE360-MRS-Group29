@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class InsuranceInfoPageController {
     public TextField insuranceProvider;
     public TextField healthPlanNumber;
@@ -44,7 +46,17 @@ public class InsuranceInfoPageController {
         }
     }
 
-    public void handleBackButton (ActionEvent event) {
-
+    public void handleBackButton (ActionEvent event) throws IOException {
+        if (UserManager.getCurrentUser().getClass() == Patient.class) {
+            sc.switchToPatientPage(event);
+        }
+        else if (UserManager.getCurrentUser().getClass() == Doctor.class) {
+            sc.switchToDoctorPage(event);
+        }
+        else if (UserManager.getCurrentUser().getClass() == Nurse.class) {
+            sc.switchToNursePage(event);
+        }
     }
+
 }
+

@@ -7,9 +7,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class NewVisitPageController {
-    public TextField timeOfVisitField;
+    public TextField nameOfPatientField;
+    public TextField dateOfVisitField;
     public TextField heightField;
     public TextField weightField;
     public TextField bodyTempField;
@@ -18,15 +20,24 @@ public class NewVisitPageController {
     public Button backButton;
     public Button addNewVisitButton;
 
-    public Nurse currNurse = new Nurse();
+    ArrayList<Patient> patientList = UserManager.getCurrentUser().getPatientList();
+    for(int i=0; i<patientList.size(); i++) {
+        if(nameOfPatientField == patientList.get(i)) {
+            patientList.get(i).newVisit(heightField,weightField,bodyTempField,bloodPressureField);
+        }
+        //If entered ID does not match, print invalid ID.
+        else if(inputId != ((Laptops) arr.get(i)).getId()) {
+            System.out.println("Invalid ID.");
+        }
+    }
 
     public SceneController sc = new SceneController();
 
     public void handleBackButton (ActionEvent event) throws IOException {
-        //sc.switchToNursePage(event);
+        sc.switchToNursePage(event);
     }
-    public void handleAddNewVisitButton () {
-        System.out.println("Added New Visit");
+    public void handleAddNewVisitButton (ActionEvent event) throws IOException {
+        sc.switchToNewVisitPage(event);
     }
 
 

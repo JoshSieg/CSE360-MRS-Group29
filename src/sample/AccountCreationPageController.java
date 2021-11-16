@@ -19,10 +19,9 @@ public class AccountCreationPageController {
     public Button backButton;
     public SceneController sc = new SceneController();
 
-    public void handleCreateAccountButton() {
-        System.out.println("clicked create account");
+    public void handleCreateAccountButton(ActionEvent event) throws IOException {
+        sc.switchToAccountCreationPage(event);
     }
-
     public void handleBackButton(ActionEvent event) throws IOException {
         sc.switchToLoginPage(event);
     }
