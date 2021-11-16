@@ -29,8 +29,8 @@ public class Patient extends User{
         return assignedNurse.getName();
     }
 
-    public void newVisit(float height, float weight, float bodyTemp, float bloodPressure) {
-        Visit newVisit = new Visit(height, weight, bodyTemp, bloodPressure);
+    public void newVisit(float height, float weight, float bodyTemp, float bloodPressure, String reasonForVisit) {
+        Visit newVisit = new Visit(height, weight, bodyTemp, bloodPressure, reasonForVisit);
         visits.add(newVisit);
     }
 }

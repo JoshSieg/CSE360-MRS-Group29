@@ -8,13 +8,14 @@ public class Visit {
     private float bodyTemp; //in fahrenheit
     private float bloodPressure;
     private Calendar date;
+    private String reasonForVisit;
 
-
-    Visit(float height, float weight, float bodyTemp, float bloodPressure) {
+    Visit(float height, float weight, float bodyTemp, float bloodPressure, String reasonForVisit) {
         this.height = height;
         this.weight = weight;
         this.bodyTemp = bodyTemp;
         this.bloodPressure = bloodPressure;
+        this.reasonForVisit = reasonForVisit;
         date = Calendar.getInstance();
     }
 
@@ -32,6 +33,10 @@ public class Visit {
 
     public float getBloodPressure() {
         return bloodPressure;
+    }
+
+    public String getReasonForVisit() {
+        return reasonForVisit;
     }
 
     public int getDay() {
