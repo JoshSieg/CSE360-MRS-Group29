@@ -31,8 +31,8 @@ public class AccountCreationPageController {
 
     @FXML
     private void initialize() {
-        this.chooseUserType.setValue("User Type");
-        this.chooseUserType.setItems(this.userTypeList);
+        chooseUserType.setValue("User Type");
+        chooseUserType.setItems(userTypeList);
     }
 
     public void handleCreateAccountButton() {
