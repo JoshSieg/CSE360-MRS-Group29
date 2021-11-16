@@ -1,10 +1,13 @@
 package sample;
 
+import java.util.Calendar;
+
 public class Visit {
     private float height; //in feet
     private float weight; //in lbs
     private float bodyTemp; //in fahrenheit
     private float bloodPressure;
+    private Calendar date;
 
 
     Visit(float height, float weight, float bodyTemp, float bloodPressure) {
@@ -12,6 +15,7 @@ public class Visit {
         this.weight = weight;
         this.bodyTemp = bodyTemp;
         this.bloodPressure = bloodPressure;
+        date = Calendar.getInstance();
     }
 
     public float getHeight() {
@@ -28,5 +32,17 @@ public class Visit {
 
     public float getBloodPressure() {
         return bloodPressure;
+    }
+
+    public int getDay() {
+        return date.get(Calendar.DATE);
+    }
+
+    public int getYear() {
+        return date.get(Calendar.YEAR);
+    }
+
+    public int getMonth() {
+        return date.get(Calendar.MONTH);
     }
 }
