@@ -10,34 +10,28 @@ public class NursePageController {
 
     public Button patientSearchButton;
     public Button editViewProfileButton;
-    public Button scheduleButton;
     public Button pharmacyInfoButton;
-    public Button labResultsButton;
     public Button logoutButton;
+
+    public UserManager currentNurse = new UserManager();
 
     public SceneController sc = new SceneController();
 
     public void handleLogoutButton(ActionEvent event) throws IOException {
+        System.out.println("logged out succesfully");
         sc.switchToLoginPage(event);
     }
 
-    public void handlePatientSearch() {
+    public void handlePatientSearch(ActionEvent event) throws IOException {
         System.out.println("clicked patient search");
+        sc.switchToPatientPage(event);
     }
-
-    public void handleViewProfile() {
+    public void handleViewProfile(ActionEvent event) throws IOException {
         System.out.println("clicked view profile");
+        sc.switchToProfilePage(event);
     }
-
-    public void handleScheduleAppointment() {
-        System.out.println("clicked schedule appointment");
-    }
-
-    public void handlePharmacyInfo() {
+    public void handlePharmacyInfo(ActionEvent event) throws IOException {
         System.out.println("clicked pharmacy info");
-    }
-
-    public void handleLabResults() {
-        System.out.println("clicked lab results");
+        sc.switchToPharmacyInfoPage(event);
     }
 }

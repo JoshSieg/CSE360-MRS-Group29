@@ -18,6 +18,8 @@ public class NewVisitPageController {
     public Button backButton;
     public Button addNewVisitButton;
 
+    public Nurse currNurse = new Nurse();
+
     public SceneController sc = new SceneController();
 
     public void handleBackButton (ActionEvent event) throws IOException {
