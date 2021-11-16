@@ -1,8 +1,9 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class Visit {
+public class Visit implements Serializable {
     private float height; //in feet
     private float weight; //in lbs
     private float bodyTemp; //in fahrenheit

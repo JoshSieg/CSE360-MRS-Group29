@@ -1,9 +1,10 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Doctor extends User {
+public class Doctor extends User implements Serializable {
     private ArrayList<Patient> patientList;
     private Nurse assignedNurse;
 
