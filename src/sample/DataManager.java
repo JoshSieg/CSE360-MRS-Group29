@@ -24,6 +24,7 @@ public class DataManager {
             for (int i = 0; i < numNurses; i++) {
                 UserManager.getAllNurses().add((Nurse) objectIn.readObject());
             }
+            objectIn.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,6 +59,7 @@ public class DataManager {
             for (Nurse nurse : UserManager.getAllNurses()) {
                 objectOut.writeObject(nurse);
             }
+            objectOut.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
