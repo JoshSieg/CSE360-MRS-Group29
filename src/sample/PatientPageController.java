@@ -9,9 +9,7 @@ import java.io.IOException;
 public class PatientPageController {
 
     public Button editViewProfileButton;
-    public Button scheduleButton;
     public Button pharmacyInfoButton;
-    public Button labResultsButton;
     public Button logoutButton;
 
     public SceneController sc = new SceneController();
@@ -19,20 +17,12 @@ public class PatientPageController {
     public void handleLogoutButton(ActionEvent event) throws IOException {
         sc.switchToLoginPage(event);
     }
-
-    public void handleViewProfile() {
+    public void handleViewProfile(ActionEvent event) throws IOException {
         System.out.println("clicked view profile");
+        sc.switchToProfilePage(event);
     }
-
-    public void handleScheduleAppointment() {
-        System.out.println("clicked schedule appointment");
-    }
-
-    public void handlePharmacyInfo() {
+    public void handlePharmacyInfo(ActionEvent event) throws IOException {
         System.out.println("clicked pharmacy");
-    }
-
-    public void handleLabResults() {
-        System.out.println("clicked handle lab results");
+        sc.switchToPharmacyInfoPage(event);
     }
 }
