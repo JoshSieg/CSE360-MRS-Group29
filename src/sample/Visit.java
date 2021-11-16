@@ -19,6 +19,7 @@ public class Visit {
         date = Calendar.getInstance();
     }
 
+
     public float getHeight() {
         return height;
     }
