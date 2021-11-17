@@ -96,6 +96,7 @@ public class AccountCreationPageController {
         String confirmPassword = confirmPasswordField.getText();
         String userType = (String)chooseUserType.getSelectionModel().getSelectedItem();
         System.out.println(userType);
+
         if (firstName.equals("") || lastName.equals("") || username.equals("") || password.equals("") || confirmPassword.equals("") || userType.equals("User Type")) {
             errorLabel.setText("One or more fields not complete. Please fill in all fields.");
             validInput = false;
@@ -106,6 +107,7 @@ public class AccountCreationPageController {
             errorLabel.setText("Passwords do not match.");
             validInput = false;
         }
+
         if (validInput) {
             if (userType.equals("Patient")) {
                 UserManager.getAllPatients().add(new Patient((firstName + " " + lastName), username, password));

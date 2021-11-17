@@ -1,12 +1,8 @@
 package sample;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
-import javax.print.Doc;
 import java.io.IOException;
 
 public class LoginPageController {
@@ -16,10 +12,12 @@ public class LoginPageController {
     public TextField usernameField;
     public PasswordField passwordField;
     public Hyperlink forgotPasswordButton;
+    public Label errorLabel;
     public SceneController sc = new SceneController();
 
     public void handleLoginButton(ActionEvent event) throws IOException {
         User currentUser = null;
+        errorLabel.setText("");
         //check for matching credentials for each of the user types
         for (Patient patient : UserManager.getAllPatients()) {
             if(patient.getUsername().equals(usernameField.getText()) && patient.getPassword().equals(passwordField.getText())) {
@@ -48,6 +46,8 @@ public class LoginPageController {
             else if (UserManager.getCurrentUser().getClass() == Nurse.class) {
                 sc.switchToNursePage(event);
             }
+        } else {
+            errorLabel.setText("Incorrect username or password.");
         }
     }
 
@@ -56,6 +56,6 @@ public class LoginPageController {
     }
     
     public void handleForgotPasswordButton(ActionEvent event) throws IOException {
-        sc.switchToPasswordChangePage(event);
+        //sc.switchToPasswordChangePage(event);
     }
 }
