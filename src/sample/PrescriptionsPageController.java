@@ -23,6 +23,6 @@ public class PrescriptionsPageController {
     }
 
     public void handleAddNewButton(ActionEvent event) {
-
+        //add new
     }
 }
