@@ -2,16 +2,24 @@ package sample;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Patient extends User implements Serializable {
     private ArrayList<Visit> visits;
+    private Date dateOfBirth;
 
     public Doctor assignedDoctor;
     public Nurse assignedNurse;
 
-    Patient(String name, String username, String password) {
+    Patient(String name, String username, String password, int year, int month, int day) {
         super(name, username, password);
         visits = new ArrayList<Visit>();
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, month);
+        cal.set(Calendar.DAY_OF_MONTH, day);
+        dateOfBirth = cal.getTime();
     }
 
     public void setAssignedDoctor(Doctor assignedDoc) {

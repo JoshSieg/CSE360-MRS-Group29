@@ -110,7 +110,7 @@ public class AccountCreationPageController {
 
         if (validInput) {
             if (userType.equals("Patient")) {
-                UserManager.getAllPatients().add(new Patient((firstName + " " + lastName), username, password));
+                UserManager.getAllPatients().add(new Patient((firstName + " " + lastName), username, password, year, month, day));
             } else if (userType.equals("Doctor")) {
                 Nurse randNurse;
                 int range = UserManager.getAllNurses().size();

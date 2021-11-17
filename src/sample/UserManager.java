@@ -13,7 +13,9 @@ public class UserManager {
         currentUser = user;
     }
 
-    public static User getCurrentUser() {return currentUser;}
+    public static User getCurrentUser() {
+        return currentUser;
+    }
 
     public static ArrayList<Patient> getAllPatients() {
         return allPatients;
