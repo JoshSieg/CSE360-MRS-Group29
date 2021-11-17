@@ -19,24 +19,29 @@ public class NewVisitPageController {
     public TextField reasonOfVisitField;
     public Button backButton;
     public Button addNewVisitButton;
-
-    ArrayList<Patient> patientList = UserManager.getCurrentUser().getPatientList();
-    for(int i=0; i<patientList.size(); i++) {
-        if(nameOfPatientField == patientList.get(i)) {
-            patientList.get(i).newVisit(heightField,weightField,bodyTempField,bloodPressureField);
-        }
-        //If entered ID does not match, print invalid ID.
-        else if(inputId != ((Laptops) arr.get(i)).getId()) {
-            System.out.println("Invalid ID.");
-        }
-    }
-
     public SceneController sc = new SceneController();
 
     public void handleBackButton (ActionEvent event) throws IOException {
         sc.switchToNursePage(event);
     }
     public void handleAddNewVisitButton (ActionEvent event) throws IOException {
+        ArrayList<Nurse> nurseList = new ArrayList<Nurse>();
+        nurseList = UserManager.getAllNurses();
+        int j = 0;
+        for(int i=0; i<nurseList.size(); i++) {
+            if(UserManager.getCurrentUser() == nurseList.get(i)) {
+                j = i;
+                break;
+            }
+        }
+        Nurse currentNurse = nurseList.get(j);
+        int k = 0;
+        for(int i=0; i<currentNurse.getPatientList().size(); i++) {
+            if(currentNurse.getPatientList().get(i).getName() == nameOfPatientField.getText()) {
+                k = i;
+            }
+        }
+        currentNurse.getPatientList().get(k).newVisit(heightField.getText(),weightField.getText(),bodyTempField.getText(),bloodPressureField.getText());
         sc.switchToNewVisitPage(event);
     }
 
