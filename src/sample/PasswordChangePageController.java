@@ -17,11 +17,13 @@ public class PasswordChangePageController {
     public Button backButton;
     public SceneController sc = new SceneController();
 
-    public void handleChangePasswordButton() {
+    public void handleChangePasswordButton(ActionEvent event) throws IOException {
         if (newPasswordField == confirmNewPasswordField) {
             System.out.println("New Password: " + newPasswordField.getText());
+            sc.switchToPasswordChangePage(event);
         }else {
             System.out.println("New Password and Confirm New Password Fields Do Not Match!");
+            sc.switchToPasswordChangePage(event);
         }
     }
 
