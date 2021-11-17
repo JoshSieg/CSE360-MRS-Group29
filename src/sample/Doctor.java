@@ -33,8 +33,12 @@ public class Doctor extends User implements Serializable {
         return patientList;
     }
 
-    public String getAssignedNurse() {
+    public String getAssignedNurseName() {
         return assignedNurse.getName();
+    }
+
+    public Nurse getAssignedNurse() {
+        return assignedNurse;
     }
 
 }

@@ -20,8 +20,8 @@ public class NursePageController {
     public void handleLogoutButton(ActionEvent event) throws IOException {
         sc.switchToLoginPage(event);
     }
-    public void handlePatientSearch(ActionEvent event) throws IOException {
-        sc.switchToPatientPage(event);
+    public void handlePatientSearch(ActionEvent event) throws IOException{
+        //patient search
     }
     public void handleViewProfile(ActionEvent event) throws IOException {
         sc.switchToProfilePage(event);

@@ -107,15 +107,17 @@ public class AccountCreationPageController {
             errorLabel.setText("Passwords do not match.");
             validInput = false;
         }
-
+        Random rand = new Random();
         if (validInput) {
             if (userType.equals("Patient")) {
-                UserManager.getAllPatients().add(new Patient((firstName + " " + lastName), username, password, year, month, day));
+                Doctor randDoctor;
+                int rangeD = UserManager.getAllDoctors().size();
+                randDoctor = UserManager.getAllDoctors().get(rand.nextInt(rangeD));
+                UserManager.getAllPatients().add(new Patient((firstName + " " + lastName), username, password, year, month, day, randDoctor, randDoctor.getAssignedNurse()));
             } else if (userType.equals("Doctor")) {
                 Nurse randNurse;
-                int range = UserManager.getAllNurses().size();
-                Random rand = new Random();
-                randNurse = UserManager.getAllNurses().get(rand.nextInt(range));
+                int rangeN = UserManager.getAllNurses().size();
+                randNurse = UserManager.getAllNurses().get(rand.nextInt(rangeN));
                 UserManager.getAllDoctors().add(new Doctor((firstName + " " + lastName), username, password, randNurse));
             } else if (userType.equals("Nurse")) {
                 UserManager.getAllNurses().add(new Nurse((firstName + " " + lastName), username, password));
