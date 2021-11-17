@@ -27,7 +27,7 @@ public class NewVisitPageController {
     public void handleAddNewVisitButton (ActionEvent event) throws IOException {
         String name = nameOfPatientField.getText();
         float height = Float.parseFloat(heightField.getText());
-        float weight = Float.parseFloat(heightField.getText());
+        float weight = Float.parseFloat(weightField.getText());
         float bodyTemp = Float.parseFloat(bodyTempField.getText());
         float bloodPressure = Float.parseFloat(bloodPressureField.getText());
         String reason = reasonOfVisitField.getText();

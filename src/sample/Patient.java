@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Patient extends User implements Serializable {
     private ArrayList<Visit> visits;
-    private Date dateOfBirth;
+    private Calendar dateOfBirth;
 
     public Doctor assignedDoctor;
     public Nurse assignedNurse;
@@ -15,11 +15,14 @@ public class Patient extends User implements Serializable {
     Patient(String name, String username, String password, int year, int month, int day) {
         super(name, username, password);
         visits = new ArrayList<Visit>();
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.YEAR, year);
-        cal.set(Calendar.MONTH, month);
-        cal.set(Calendar.DAY_OF_MONTH, day);
-        dateOfBirth = cal.getTime();
+        dateOfBirth = Calendar.getInstance();
+        dateOfBirth.set(Calendar.YEAR, year);
+        dateOfBirth.set(Calendar.MONTH, month);
+        dateOfBirth.set(Calendar.DAY_OF_MONTH, day);
+    }
+
+    public Calendar getDateOfBirth() {
+        return dateOfBirth;
     }
 
     public void setAssignedDoctor(Doctor assignedDoc) {

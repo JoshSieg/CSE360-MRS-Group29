@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 public class DoctorPageController {
 
@@ -55,7 +56,7 @@ public class DoctorPageController {
                 }
             }
             if (selectedPatient != null) {
-                patientInfoField.setText(selectedPatient.getName() + "\n" + "info about patient goes here");
+                patientInfoField.setText(selectedPatient.getName() + "\n" + "D.O.B: " + selectedPatient.getDateOfBirth().get(Calendar.MONTH) + "/" + selectedPatient.getDateOfBirth().get(Calendar.DAY_OF_MONTH) + "/" + selectedPatient.getDateOfBirth().get(Calendar.YEAR));
             }
         }
     }
