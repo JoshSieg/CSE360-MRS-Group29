@@ -18,11 +18,9 @@ public class PatientPageController {
         sc.switchToLoginPage(event);
     }
     public void handleViewProfile(ActionEvent event) throws IOException {
-        System.out.println("clicked view profile");
         sc.switchToProfilePage(event);
     }
     public void handlePharmacyInfo(ActionEvent event) throws IOException {
-        System.out.println("clicked pharmacy");
         sc.switchToPharmacyInfoPage(event);
     }
 }
