@@ -21,6 +21,7 @@ public class Patient extends User implements Serializable {
         dateOfBirth.set(Calendar.DAY_OF_MONTH, day);
         assignedDoctor = doctor;
         assignedNurse = nurse;
+        doctor.addPatientToList(this);
     }
 
     public Calendar getDateOfBirth() {

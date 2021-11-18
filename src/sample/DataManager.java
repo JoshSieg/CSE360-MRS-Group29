@@ -26,39 +26,40 @@ public class DataManager {
             for (int i = 0; i < numPatients; i++) {
                 currentPatient = (Patient) objectIn.readObject();
                 UserManager.getAllPatients().add(currentPatient);
-                numVisits = objectIn.readInt();
-                for (int j = 0; j < numVisits; j++) {
-                    currentPatient.addVisit((Visit) objectIn.readObject());
-                }
-                currentPatient.setAssignedDoctorName((Doctor) objectIn.readObject());
-                currentPatient.setAssignedNurseName((Nurse) objectIn.readObject());
+//                numVisits = objectIn.readInt();
+//                for (int j = 0; j < numVisits; j++) {
+//                    currentPatient.addVisit((Visit) objectIn.readObject());
+//                }
+//                currentPatient.setAssignedDoctorName((Doctor) objectIn.readObject());
+//                currentPatient.setAssignedNurseName((Nurse) objectIn.readObject());
             }
             for (int i = 0; i < numDoctors; i++) {
                 currentDoctor = (Doctor) objectIn.readObject();
                 UserManager.getAllDoctors().add(currentDoctor);
-                numPatientsToDoctor = objectIn.readInt();
-                for (int j = 0; j < numPatientsToDoctor; j++) {
-                    currentPatientUsername = (String) objectIn.readObject();
-                    for (Patient patient : UserManager.getAllPatients()) {
-                        if (patient.getUsername().equals(currentPatientUsername)) {
-                            currentDoctor.addPatientToList(patient);
-                        }
-                    }
-                }
+//                numPatientsToDoctor = objectIn.readInt();
+//                System.out.println("numPatientsToDoctor: " + numPatientsToDoctor);
+//                for (int j = 0; j < numPatientsToDoctor; j++) {
+//                    currentPatientUsername = (String) objectIn.readObject();
+//                    for (Patient patient : UserManager.getAllPatients()) {
+//                        if (patient.getUsername().equals(currentPatientUsername)) {
+//                            currentDoctor.addPatientToList(patient);
+//                        }
+//                    }
+//                }
 
             }
             for (int i = 0; i < numNurses; i++) {
                 currentNurse = (Nurse) objectIn.readObject();
                 UserManager.getAllNurses().add(currentNurse);
-                numDoctorsToNurse = objectIn.readInt();
-                for (int j = 0; j < numDoctorsToNurse; j++) {
-                    currentDoctorUsername = (String) objectIn.readObject();
-                    for (Doctor doctor : UserManager.getAllDoctors()) {
-                        if (doctor.getUsername().equals(currentDoctorUsername)) {
-                            currentNurse.assignToDoctor(doctor);
-                        }
-                    }
-                }
+//                numDoctorsToNurse = objectIn.readInt();
+//                for (int j = 0; j < numDoctorsToNurse; j++) {
+//                    currentDoctorUsername = (String) objectIn.readObject();
+//                    for (Doctor doctor : UserManager.getAllDoctors()) {
+//                        if (doctor.getUsername().equals(currentDoctorUsername)) {
+//                            currentNurse.assignToDoctor(doctor);
+//                        }
+//                    }
+//                }
             }
             objectIn.close();
         } catch (Exception e) {
@@ -88,26 +89,26 @@ public class DataManager {
             objectOut.writeInt(numNurses);
             for (Patient patient : UserManager.getAllPatients()) {
                 objectOut.writeObject(patient);
-                objectOut.writeInt(patient.getVisits().size());
-                for (Visit visit : patient.getVisits()) {
-                    objectOut.writeObject(visit);
-                }
-                objectOut.writeObject(patient.assignedDoctor);
-                objectOut.writeObject(patient.assignedNurse);
+//                objectOut.writeInt(patient.getVisits().size());
+//                for (Visit visit : patient.getVisits()) {
+//                    objectOut.writeObject(visit);
+//                }
+//                objectOut.writeObject(patient.assignedDoctor);
+//                objectOut.writeObject(patient.assignedNurse);
             }
             for (Doctor doctor : UserManager.getAllDoctors()) {
                 objectOut.writeObject(doctor);
-                objectOut.writeInt(doctor.getNumPatients());
-                for (Patient patient : doctor.getPatientList()) {
-                    objectOut.writeObject(patient.getUsername());
-                }
+//                objectOut.writeInt(doctor.getNumPatients());
+//                for (Patient patient : doctor.getPatientList()) {
+//                    objectOut.writeObject(patient.getUsername());
+//                }
             }
             for (Nurse nurse : UserManager.getAllNurses()) {
                 objectOut.writeObject(nurse);
-                objectOut.writeInt(nurse.getAssignedDoctors().size());
-                for (Doctor doctor : nurse.getAssignedDoctors()) {
-                    objectOut.writeObject(doctor.getUsername());
-                }
+//                objectOut.writeInt(nurse.getAssignedDoctors().size());
+//                for (Doctor doctor : nurse.getAssignedDoctors()) {
+//                    objectOut.writeObject(doctor.getUsername());
+//                }
             }
             objectOut.close();
         } catch (Exception e) {
