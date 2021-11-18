@@ -15,6 +15,10 @@ public class Nurse extends User implements Serializable {
         assignedDoctors.add(doctor);
     }
 
+    public ArrayList<Doctor> getAssignedDoctors() {
+        return assignedDoctors;
+    }
+
     public ArrayList<Patient> getPatientList() {
         ArrayList<Patient> allPatients = new ArrayList<Patient>();
         for (Doctor doctor:assignedDoctors) {

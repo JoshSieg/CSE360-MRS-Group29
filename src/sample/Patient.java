@@ -51,6 +51,14 @@ public class Patient extends User implements Serializable {
         return assignedNurse;
     }
 
+    public ArrayList<Visit> getVisits() {
+        return visits;
+    }
+
+    public void addVisit(Visit visit) {
+        visits.add(visit);
+    }
+
     public void newVisit(float height, float weight, float bodyTemp, float bloodPressure, String reasonForVisit) {
         Visit newVisit = new Visit(height, weight, bodyTemp, bloodPressure, reasonForVisit);
         visits.add(newVisit);
