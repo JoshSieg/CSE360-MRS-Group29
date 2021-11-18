@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -16,6 +17,13 @@ public class PharmacyInfoPageController {
     public Button backButton;
     public SceneController sc = new SceneController();
 
+    @FXML
+    public void initialize() {
+        pharmacyName.setText(UserManager.getCurrentPatient().getPharmacyName());
+        pharmacyAddress.setText(UserManager.getCurrentPatient().getPharmacyAddress());
+        pharmacyPhone.setText(UserManager.getCurrentPatient().getPharmacyPhoneNumber());
+    }
+
     public void handleNameButton (ActionEvent event) {
         if (nameButton.getText().equals("Edit")) {
             pharmacyName.setEditable(true);
@@ -23,6 +31,7 @@ public class PharmacyInfoPageController {
         } else if (nameButton.getText().equals("Save")) {
             pharmacyName.setEditable(false);
             nameButton.setText("Edit");
+            UserManager.getCurrentPatient().setPharmacyName(pharmacyName.getText());
         }
     }
 
@@ -33,6 +42,7 @@ public class PharmacyInfoPageController {
         } else if (addressButton.getText().equals("Save")) {
             pharmacyAddress.setEditable(false);
             addressButton.setText("Edit");
+            UserManager.getCurrentPatient().setPharmacyAddress(pharmacyAddress.getText());
         }
     }
 
@@ -43,6 +53,7 @@ public class PharmacyInfoPageController {
         } else if (phoneButton.getText().equals("Save")) {
             pharmacyPhone.setEditable(false);
             phoneButton.setText("Edit");
+            UserManager.getCurrentPatient().setPharmacyPhoneNumber(pharmacyPhone.getText());
         }
     }
 

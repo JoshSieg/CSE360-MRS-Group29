@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -16,6 +17,13 @@ public class InsuranceInfoPageController {
     public Button backButton;
     public SceneController sc = new SceneController();
 
+    @FXML
+    public void initialize() {
+        insuranceProvider.setText(UserManager.getCurrentPatient().getInsuranceProvider());
+        healthPlanNumber.setText(UserManager.getCurrentPatient().getHealthPlanNumber());
+        memberID.setText(UserManager.getCurrentPatient().getMemberID());
+    }
+
     public void handleProviderButton (ActionEvent event) {
         if (providerButton.getText().equals("Edit")) {
             insuranceProvider.setEditable(true);
@@ -23,6 +31,7 @@ public class InsuranceInfoPageController {
         } else if (providerButton.getText().equals("Save")) {
             insuranceProvider.setEditable(false);
             providerButton.setText("Edit");
+            UserManager.getCurrentPatient().setInsuranceProvider(insuranceProvider.getText());
         }
     }
 
@@ -33,6 +42,7 @@ public class InsuranceInfoPageController {
         } else if (planNumberButton.getText().equals("Save")) {
             healthPlanNumber.setEditable(false);
             planNumberButton.setText("Edit");
+            UserManager.getCurrentPatient().setHealthPlanNumber(healthPlanNumber.getText());
         }
     }
 
@@ -43,6 +53,7 @@ public class InsuranceInfoPageController {
         } else if (IDButton.getText().equals("Save")) {
             memberID.setEditable(false);
             IDButton.setText("Edit");
+            UserManager.getCurrentPatient().setMemberID(memberID.getText());
         }
     }
 
