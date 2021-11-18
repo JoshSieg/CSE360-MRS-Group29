@@ -8,6 +8,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class DoctorPageController {
 
@@ -25,6 +26,8 @@ public class DoctorPageController {
 
     @FXML
     public void initialize() {
+        viewLastVisitButton.setVisible(false);
+        goPatientPageButton.setVisible(false);
         System.out.println(UserManager.getCurrentDoctor().getPatientList().toString());
         patients = new String[UserManager.getCurrentDoctor().getPatientList().size()][2];
         int count = 0;
@@ -59,6 +62,8 @@ public class DoctorPageController {
             }
             if (selectedPatient != null) {
                 patientInfoField.setText(selectedPatient.getName() + "\n" + "D.O.B: " + selectedPatient.getDateOfBirth().get(Calendar.MONTH) + "/" + selectedPatient.getDateOfBirth().get(Calendar.DAY_OF_MONTH) + "/" + selectedPatient.getDateOfBirth().get(Calendar.YEAR));
+                viewLastVisitButton.setVisible(true);
+                goPatientPageButton.setVisible(true);
             }
         }
     }
@@ -69,9 +74,12 @@ public class DoctorPageController {
 
     public void handleSearchPatient(ActionEvent event) throws IOException{
         clearScrollPane();
+        viewLastVisitButton.setVisible(false);
+        goPatientPageButton.setVisible(false);
+        patientInfoField.setText("");
         ArrayList<Patient> searchedPatients = new ArrayList<>();
         for (Patient patient : UserManager.getCurrentDoctor().getPatientList()) {
-            if (patient.getName().contains(patientNameField.getText())) {
+            if (patient.getName().toLowerCase(Locale.ROOT).contains(patientNameField.getText().toLowerCase(Locale.ROOT))) {
                 searchedPatients.add(patient);
             }
         }
@@ -105,7 +113,7 @@ public class DoctorPageController {
     }
 
     public void clearScrollPane() {
-        patientBox.getChildren().removeAll();
+        patientBox.getChildren().clear();
     }
 
 }
