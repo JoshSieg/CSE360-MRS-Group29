@@ -29,16 +29,13 @@ public class AccountCreationPageController {
     public SceneController sc = new SceneController();
     ObservableList<String> userTypeList = FXCollections.observableArrayList("Patient", "Nurse", "Doctor");
 
-    public AccountCreationPageController() {
-    }
-
     @FXML
     private void initialize() {
         chooseUserType.setValue("User Type");
         chooseUserType.setItems(userTypeList);
     }
 
-    public void handleCreateAccountButton() {
+    public void handleCreateAccountButton(ActionEvent event) throws IOException {
         boolean validInput = true;
 
         int month = 0;
@@ -114,13 +111,16 @@ public class AccountCreationPageController {
                 int rangeD = UserManager.getAllDoctors().size();
                 randDoctor = UserManager.getAllDoctors().get(rand.nextInt(rangeD));
                 UserManager.getAllPatients().add(new Patient((firstName + " " + lastName), username, password, year, month, day, randDoctor, randDoctor.getAssignedNurse()));
+                sc.switchToAccountCreationPage(event);
             } else if (userType.equals("Doctor")) {
                 Nurse randNurse;
                 int rangeN = UserManager.getAllNurses().size();
                 randNurse = UserManager.getAllNurses().get(rand.nextInt(rangeN));
                 UserManager.getAllDoctors().add(new Doctor((firstName + " " + lastName), username, password, randNurse));
+                sc.switchToAccountCreationPage(event);
             } else if (userType.equals("Nurse")) {
                 UserManager.getAllNurses().add(new Nurse((firstName + " " + lastName), username, password));
+                sc.switchToAccountCreationPage(event);
             } else {
                 errorLabel.setText("Could not create account.");
                 return;
