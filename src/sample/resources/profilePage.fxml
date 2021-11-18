@@ -4,46 +4,51 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ProfilePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="470.0" layoutY="149.0" prefHeight="102.0" prefWidth="100.0">
-         <children>
-            <TextField fx:id="heightField" />
-            <TextField fx:id="weightField" />
-            <TextField fx:id="bodyTempField" />
-            <TextField fx:id="bloodPressureField" />
-         </children>
-      </VBox>
-      <VBox layoutX="354.0" layoutY="149.0" prefHeight="102.0" prefWidth="116.0">
-         <children>
-            <VBox prefHeight="0.0" prefWidth="116.0" />
-            <Label prefHeight="25.0" prefWidth="87.0" text="Edit Height:" />
-            <Label prefHeight="26.0" prefWidth="101.0" text="Edit Weight:" />
-            <Label prefHeight="26.0" prefWidth="110.0" text="Edit Body Temp:" />
-            <Label prefHeight="26.0" prefWidth="116.0" text="Edit Blood Pressure:" />
-         </children>
-      </VBox>
-      <Label layoutX="236.0" layoutY="47.0" text="Profile Page" textFill="#2962c3">
+      <Label layoutX="236.0" layoutY="42.0" text="Profile Page" textFill="#1427f8">
          <font>
             <Font size="24.0" />
          </font></Label>
-      <VBox layoutX="200.0" layoutY="149.0" prefHeight="102.0" prefWidth="100.0">
+      <ScrollPane layoutX="77.0" layoutY="128.0" prefHeight="200.0" prefWidth="200.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="184.0" prefWidth="186.0" />
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label layoutX="77.0" layoutY="97.0" text="Patient Visits:" textFill="#1427f8">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="334.0" layoutY="97.0" text="Visit Info:" textFill="#1427f8">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="507.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
+      <VBox layoutX="334.0" layoutY="128.0" prefHeight="118.0" prefWidth="106.0">
          <children>
-            <TextField />
-            <TextField />
-            <TextField />
-            <TextField />
+            <Label prefHeight="18.0" prefWidth="106.0" text="Date:" />
+            <Label prefHeight="20.0" prefWidth="101.0" text="Height:" />
+            <Label prefHeight="20.0" prefWidth="99.0" text="Weight:" />
+            <Label prefHeight="20.0" prefWidth="98.0" text="Body Temp:" />
+            <Label prefHeight="20.0" prefWidth="99.0" text="Blood Pressure:" />
+            <Label prefHeight="20.0" prefWidth="102.0" text="Reason For Visit:" />
          </children>
       </VBox>
-      <VBox layoutX="100.0" layoutY="149.0" prefHeight="102.0" prefWidth="100.0">
+      <VBox layoutX="440.0" layoutY="128.0" prefHeight="118.0" prefWidth="127.0">
          <children>
-            <Label prefHeight="25.0" prefWidth="100.0" text="Height" />
-            <Label prefHeight="25.0" prefWidth="100.0" text="Weight" />
-            <Label prefHeight="24.0" prefWidth="100.0" text="Body Temp" />
-            <Label prefHeight="26.0" prefWidth="100.0" text="Blood Pressure" />
+            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
          </children>
       </VBox>
-      <Button fx:id="backButton" layoutX="470.0" layoutY="52.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
-      <Button fx:id="saveChangesButton" layoutX="470.0" layoutY="279.0" mnemonicParsing="false" text="Save Changes" />
+      <VBox layoutX="334.0" layoutY="246.0" prefHeight="200.0" prefWidth="100.0" />
    </children>
 </AnchorPane>
