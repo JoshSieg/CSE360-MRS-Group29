@@ -25,6 +25,14 @@ public class Main extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        //test accounts
+        UserManager.getAllNurses().add(new Nurse("John Doe", "john", "password"));
+        UserManager.getAllDoctors().add(new Doctor("James Doctor", "james", "password", UserManager.getAllNurses().get(0)));
+        UserManager.getAllDoctors().add(new Doctor("Don Donter", "don", "password", UserManager.getAllNurses().get(0)));
+        UserManager.getAllPatients().add(new Patient("Patient 1", "p1", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
+        UserManager.getAllPatients().add(new Patient("Patient 2", "p2", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
+        UserManager.getAllPatients().add(new Patient("Patient 3", "p3", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
+        UserManager.getAllPatients().add(new Patient("Patient 4", "p4", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
     }
 
 
