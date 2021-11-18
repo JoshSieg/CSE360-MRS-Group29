@@ -10,6 +10,8 @@ public class Doctor extends User implements Serializable {
 
     public Doctor(String name, String username, String password, Nurse assignedNurse) {
         super(name, username, password);
+        setAssignedNurse(assignedNurse);
+        assignedNurse.assignToDoctor(this);
         patientList = new ArrayList<Patient>(0);
     }
 

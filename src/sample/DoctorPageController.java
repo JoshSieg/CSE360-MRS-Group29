@@ -28,7 +28,6 @@ public class DoctorPageController {
     public void initialize() {
         viewLastVisitButton.setVisible(false);
         goPatientPageButton.setVisible(false);
-        System.out.println(UserManager.getCurrentDoctor().getPatientList().toString());
         patients = new String[UserManager.getCurrentDoctor().getPatientList().size()][2];
         int count = 0;
         ToggleButton tempButton;

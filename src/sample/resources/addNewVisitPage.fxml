@@ -4,28 +4,26 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NewVisitPageController">
+<AnchorPane prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NewVisitPageController">
    <children>
-      <Label layoutX="250.0" layoutY="32.0" text="New Visit" textFill="#1427f8">
+      <Label layoutX="269.0" layoutY="32.0" text="New Visit" textFill="#1427f8">
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Button fx:id="addNewVisitButton" layoutX="434.0" layoutY="235.0" mnemonicParsing="false" onAction="#handleAddNewVisitButton" text="Add New Visit" />
-      <Button fx:id="backButton" layoutX="480.0" layoutY="37.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
-      <VBox layoutX="250.0" layoutY="77.0" prefHeight="177.0" prefWidth="100.0">
+      <Button fx:id="addNewVisitButton" layoutX="434.0" layoutY="273.0" mnemonicParsing="false" onAction="#handleAddNewVisitButton" text="Add New Visit" />
+      <Button fx:id="backButton" layoutX="580.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
+      <VBox layoutX="269.0" layoutY="77.0" prefHeight="241.0" prefWidth="150.0">
          <children>
-            <TextField fx:id="nameOfPatientField" />
             <TextField fx:id="dateOfVisitField" />
             <TextField fx:id="heightField" prefHeight="26.0" prefWidth="96.0" />
             <TextField fx:id="weightField" />
             <TextField fx:id="bodyTempField" />
             <TextField fx:id="bloodPressureField" prefHeight="20.0" prefWidth="100.0" />
-            <TextField fx:id="reasonOfVisitField" />
+            <TextField fx:id="reasonOfVisitField" prefHeight="95.0" prefWidth="150.0" />
          </children>
       </VBox>
-      <VBox layoutX="150.0" layoutY="77.0" prefHeight="179.0" prefWidth="100.0">
+      <VBox layoutX="169.0" layoutY="77.0" prefHeight="179.0" prefWidth="100.0">
          <children>
-            <Label prefHeight="24.0" prefWidth="102.0" text="Name of Patient:" />
             <Label prefHeight="27.0" prefWidth="100.0" text="Date of Visit:" />
             <Label prefHeight="24.0" prefWidth="99.0" text="Height:" />
             <Label prefHeight="27.0" prefWidth="100.0" text="Weight:" />
