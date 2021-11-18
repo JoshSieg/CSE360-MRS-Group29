@@ -11,11 +11,15 @@ public class PatientPageController {
     public Button editViewProfileButton;
     public Button pharmacyInfoButton;
     public Button logoutButton;
+    public Button insuranceInfoButton;
 
     public SceneController sc = new SceneController();
 
     public void handleLogoutButton(ActionEvent event) throws IOException {
         sc.switchToLoginPage(event);
+    }
+    public void handleInsuranceInfoButton(ActionEvent event) throws IOException {
+        sc.switchToInsuranceInfoPage(event);
     }
     public void handleViewProfile(ActionEvent event) throws IOException {
         sc.switchToProfilePage(event);
