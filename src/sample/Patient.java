@@ -8,6 +8,13 @@ import java.util.Date;
 public class Patient extends User implements Serializable {
     private ArrayList<Visit> visits;
     private Calendar dateOfBirth;
+    private String pharmacyName;
+    private String pharmacyAddress;
+    private String pharmacyPhoneNumber;
+    private ArrayList<String[]> prescriptions;
+    private String insuranceProvider;
+    private String healthPlanNumber;
+    private String memberID;
 
     public Doctor assignedDoctor;
     public Nurse assignedNurse;
@@ -21,7 +28,68 @@ public class Patient extends User implements Serializable {
         dateOfBirth.set(Calendar.DAY_OF_MONTH, day);
         assignedDoctor = doctor;
         assignedNurse = nurse;
+        prescriptions = new ArrayList<>();
         doctor.addPatientToList(this);
+    }
+
+    public String getPharmacyName() {
+        return pharmacyName;
+    }
+
+    public String getPharmacyAddress() {
+        return pharmacyAddress;
+    }
+
+    public String getPharmacyPhoneNumber() {
+        return pharmacyPhoneNumber;
+    }
+
+    public String getInsuranceProvider() {
+        return insuranceProvider;
+    }
+
+    public String getHealthPlanNumber() {
+        return healthPlanNumber;
+    }
+
+    public String getMemberID() {
+        return memberID;
+    }
+
+    public void setHealthPlanNumber(String healthPlanNumber) {
+        this.healthPlanNumber = healthPlanNumber;
+    }
+
+    public void setInsuranceProvider(String insuranceProvider) {
+        this.insuranceProvider = insuranceProvider;
+    }
+
+    public void setMemberID(String memberID) {
+        this.memberID = memberID;
+    }
+
+    public void setPharmacyAddress(String pharmacyAddress) {
+        this.pharmacyAddress = pharmacyAddress;
+    }
+
+    public void setPharmacyName(String pharmacyName) {
+        this.pharmacyName = pharmacyName;
+    }
+
+    public void setPharmacyPhoneNumber(String pharmacyPhoneNumber) {
+        this.pharmacyPhoneNumber = pharmacyPhoneNumber;
+    }
+
+    public ArrayList<String[]> getPrescriptions() {
+        return prescriptions;
+    }
+
+    public void addPrescription(String[] prescriptions) {
+        this.prescriptions.add(prescriptions);
+    }
+
+    public void removePrescription(String[] prescriptions) {
+        this.prescriptions.remove(prescriptions);
     }
 
     public Calendar getDateOfBirth() {
