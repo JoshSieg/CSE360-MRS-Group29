@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class NewVisitPageController {
-    public TextField dateOfVisitField;
     public TextField heightField;
     public TextField weightField;
     public TextField bodyTempField;

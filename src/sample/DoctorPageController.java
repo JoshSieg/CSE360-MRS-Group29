@@ -16,7 +16,6 @@ public class DoctorPageController {
     public TextArea patientInfoField;
     public Button logoutButton; //go to login page (first page)
     public Button searchPatientButton;
-    public Button viewLastVisitButton;
     public Button goPatientPageButton;
     public VBox patientBox;
     private String[][] patients;
@@ -26,7 +25,6 @@ public class DoctorPageController {
 
     @FXML
     public void initialize() {
-        viewLastVisitButton.setVisible(false);
         goPatientPageButton.setVisible(false);
         patients = new String[UserManager.getCurrentDoctor().getPatientList().size()][2];
         int count = 0;
@@ -61,7 +59,6 @@ public class DoctorPageController {
             }
             if (selectedPatient != null) {
                 patientInfoField.setText(selectedPatient.getName() + "\n" + "D.O.B: " + selectedPatient.getDateOfBirth().get(Calendar.MONTH) + "/" + selectedPatient.getDateOfBirth().get(Calendar.DAY_OF_MONTH) + "/" + selectedPatient.getDateOfBirth().get(Calendar.YEAR));
-                viewLastVisitButton.setVisible(true);
                 goPatientPageButton.setVisible(true);
             }
         }
@@ -73,7 +70,6 @@ public class DoctorPageController {
 
     public void handleSearchPatient(ActionEvent event) throws IOException{
         clearScrollPane();
-        viewLastVisitButton.setVisible(false);
         goPatientPageButton.setVisible(false);
         patientInfoField.setText("");
         ArrayList<Patient> searchedPatients = new ArrayList<>();

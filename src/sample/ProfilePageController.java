@@ -33,7 +33,7 @@ public class ProfilePageController {
         ToggleButton tempButton;
         ToggleGroup tg = new ToggleGroup();
         for (int i = 0; i < UserManager.getCurrentPatient().getVisits().size(); i++) {
-            tempButton = new ToggleButton(UserManager.getCurrentPatient().getVisits().get(i).getDate().toString());
+            tempButton = new ToggleButton(UserManager.getCurrentPatient().getVisits().get(i).getDateFormatted());
             tempButton.setOnAction(this::handleClickVisit);
             tempButton.setMinWidth(198);
             tempButton.setToggleGroup(tg);
@@ -45,7 +45,7 @@ public class ProfilePageController {
         String selectedDate = ((ToggleButton)event.getSource()).getText();
         int j = 0;
         for(int i = 0; i < UserManager.getCurrentPatient().getVisits().size(); i++) {
-            if(UserManager.getCurrentPatient().getVisits().get(i).getDate().toString() == selectedDate) {
+            if(UserManager.getCurrentPatient().getVisits().get(i).getDateFormatted().equals(selectedDate)) {
                 j = i;
             }
         }

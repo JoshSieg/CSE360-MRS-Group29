@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DoctorPageController">
+<AnchorPane prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DoctorPageController">
    <children>
       <TextField fx:id="patientNameField" layoutX="24.0" layoutY="71.0" promptText="Enter Patient Name" />
       <TextArea fx:id="patientInfoField" editable="false" layoutX="308.0" layoutY="111.0" prefHeight="200.0" prefWidth="251.0" />
-      <Button fx:id="viewLastVisitButton" layoutX="460.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleViewLastVisit" text="View Last Visit">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Button>
       <Button fx:id="goPatientPageButton" layoutX="433.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleToPatientPage" text="Go to Patient Page" />
       <ScrollPane layoutX="24.0" layoutY="111.0" prefHeight="200.0" prefWidth="213.0">
          <content>

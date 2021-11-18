@@ -21,18 +21,22 @@ public class Main extends Application {
             File userData = new File("src/sample/resources/userData.txt");
             if(userData.isFile()) {
                 dm.readFromFile("src/sample/resources/userData.txt");
+            } else {
+                //test accounts
+                UserManager.getAllNurses().add(new Nurse("John Doe", "john", "password"));
+                UserManager.getAllDoctors().add(new Doctor("James Doctor", "james", "password", UserManager.getAllNurses().get(0)));
+                UserManager.getAllDoctors().add(new Doctor("Don Donter", "don", "password", UserManager.getAllNurses().get(0)));
+                UserManager.getAllPatients().add(new Patient("Patient 1", "p1", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
+                UserManager.getAllPatients().add(new Patient("Patient 2", "p2", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
+                UserManager.getAllPatients().add(new Patient("Patient 3", "p3", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
+                UserManager.getAllPatients().add(new Patient("Patient 4", "p4", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
+//                for (Patient patient : UserManager.getAllPatients()) {
+//                    patient.addVisit(new Visit(32,100, 97.5F,123,"test visit"));
+//                }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        //test accounts
-        UserManager.getAllNurses().add(new Nurse("John Doe", "john", "password"));
-        UserManager.getAllDoctors().add(new Doctor("James Doctor", "james", "password", UserManager.getAllNurses().get(0)));
-        UserManager.getAllDoctors().add(new Doctor("Don Donter", "don", "password", UserManager.getAllNurses().get(0)));
-        UserManager.getAllPatients().add(new Patient("Patient 1", "p1", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
-        UserManager.getAllPatients().add(new Patient("Patient 2", "p2", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
-        UserManager.getAllPatients().add(new Patient("Patient 3", "p3", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
-        UserManager.getAllPatients().add(new Patient("Patient 4", "p4", "password", 2000, 30, 1, UserManager.getAllDoctors().get(0), UserManager.getAllDoctors().get(0).getAssignedNurse()));
     }
 
 

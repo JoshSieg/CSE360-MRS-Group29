@@ -16,7 +16,6 @@ public class NursePageController {
     public TextArea patientInfoField;
     public Button logoutButton; //go to login page (first page)
     public Button searchPatientButton;
-    public Button viewLastVisitButton;
     public Button goPatientPageButton;
     public Button newVisitButton;
     public VBox patientBox;
@@ -27,7 +26,6 @@ public class NursePageController {
 
     @FXML
     public void initialize() {
-        viewLastVisitButton.setVisible(false);
         goPatientPageButton.setVisible(false);
         newVisitButton.setVisible(false);
         patients = new String[UserManager.getCurrentNurse().getPatientList().size()][2];
@@ -63,7 +61,6 @@ public class NursePageController {
             }
             if (selectedPatient != null) {
                 patientInfoField.setText(selectedPatient.getName() + "\n" + "D.O.B: " + selectedPatient.getDateOfBirth().get(Calendar.MONTH) + "/" + selectedPatient.getDateOfBirth().get(Calendar.DAY_OF_MONTH) + "/" + selectedPatient.getDateOfBirth().get(Calendar.YEAR));
-                viewLastVisitButton.setVisible(true);
                 goPatientPageButton.setVisible(true);
                 newVisitButton.setVisible(true);
             }
@@ -80,7 +77,6 @@ public class NursePageController {
 
     public void handleSearchPatient(ActionEvent event) throws IOException{
         clearScrollPane();
-        viewLastVisitButton.setVisible(false);
         goPatientPageButton.setVisible(false);
         newVisitButton.setVisible(false);
         patientInfoField.setText("");

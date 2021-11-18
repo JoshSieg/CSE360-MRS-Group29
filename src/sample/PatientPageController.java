@@ -16,11 +16,15 @@ public class PatientPageController {
     public Button logoutButton;
     public Button insuranceInfoButton;
     public Label patientName;
+    public Label nurseName;
+    public Label doctorName;
 
 //
     @FXML
     public void initialize() {
         patientName.setText(UserManager.getCurrentPatient().getName() + "'s info: ");
+        nurseName.setText(UserManager.getCurrentPatient().getAssignedNurseName());
+        doctorName.setText(UserManager.getCurrentPatient().getAssignedDoctorName());
     }
     public SceneController sc = new SceneController();
 

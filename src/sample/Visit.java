@@ -24,6 +24,10 @@ public class Visit implements Serializable {
         return date;
     }
 
+    public String getDateFormatted() {
+        return getMonth() + "/" + getDay() + "/" + getYear();
+    }
+
     public float getHeight() {
         return height;
     }
