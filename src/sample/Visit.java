@@ -20,6 +20,9 @@ public class Visit implements Serializable {
         date = Calendar.getInstance();
     }
 
+    public Calendar getDate() {
+        return date;
+    }
 
     public float getHeight() {
         return height;
