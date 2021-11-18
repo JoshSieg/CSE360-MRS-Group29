@@ -35,7 +35,7 @@ public class NewVisitPageController {
         ArrayList<Nurse> nurseList = UserManager.getAllNurses();
         int j = 0;
         for(int i=0; i<nurseList.size(); i++) {
-            if(UserManager.getCurrentUser() == nurseList.get(i)) {
+            if(UserManager.getCurrentNurse() == nurseList.get(i)) {
                 j = i;
                 break;
             }

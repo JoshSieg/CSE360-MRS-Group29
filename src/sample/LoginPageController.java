@@ -16,34 +16,43 @@ public class LoginPageController {
     public SceneController sc = new SceneController();
 
     public void handleLoginButton(ActionEvent event) throws IOException {
-        User currentUser = null;
+        Patient currentPatient = null;
+        Doctor currentDoctor = null;
+        Nurse currentNurse = null;
+        String currentUserType = "";
         errorLabel.setText("");
         //check for matching credentials for each of the user types
         for (Patient patient : UserManager.getAllPatients()) {
             if(patient.getUsername().equals(usernameField.getText()) && patient.getPassword().equals(passwordField.getText())) {
-                currentUser = patient;
+                currentPatient = patient;
+                currentUserType = "Patient";
             }
         }
         for (Doctor doctor : UserManager.getAllDoctors()) {
             if(doctor.getUsername().equals(usernameField.getText()) && doctor.getPassword().equals(passwordField.getText())) {
-                currentUser = doctor;
+                currentDoctor = doctor;
+                currentUserType = "Doctor";
             }
         }
         for (Nurse nurse : UserManager.getAllNurses()) {
             if(nurse.getUsername().equals(usernameField.getText()) && nurse.getPassword().equals(passwordField.getText())) {
-                currentUser = nurse;
+                currentNurse = nurse;
+                currentUserType = "Nurse";
             }
         }
         //set current user and go to corresponding user page if there is a user with matching username and password
-        if (currentUser != null) {
-            UserManager.setCurrentUser(currentUser);
-            if (UserManager.getCurrentUser().getClass() == Patient.class) {
+        if ((currentDoctor != null || currentPatient != null || currentNurse != null) && currentUserType != "") {
+            UserManager.setCurrentUserType(currentUserType);
+            if (UserManager.getCurrentUserType().equals("Patient")) {
+                UserManager.setCurrentPatient(currentPatient);
                 sc.switchToPatientPage(event);
             }
-            else if (UserManager.getCurrentUser().getClass() == Doctor.class) {
+            else if (UserManager.getCurrentUserType().equals("Doctor")) {
+                UserManager.setCurrentDoctor(currentDoctor);
                 sc.switchToDoctorPage(event);
             }
-            else if (UserManager.getCurrentUser().getClass() == Nurse.class) {
+            else if (UserManager.getCurrentUserType().equals("Nurse")) {
+                UserManager.setCurrentNurse(currentNurse);
                 sc.switchToNursePage(event);
             }
         } else {
