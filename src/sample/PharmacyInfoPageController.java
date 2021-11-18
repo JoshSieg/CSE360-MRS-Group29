@@ -47,13 +47,13 @@ public class PharmacyInfoPageController {
     }
 
     public void handleBackButton (ActionEvent event) throws IOException {
-        if (UserManager.getCurrentUser().getClass() == Patient.class) {
+        if (UserManager.getCurrentUserType().equals("Patient")) {
             sc.switchToPatientPage(event);
         }
-        else if (UserManager.getCurrentUser().getClass() == Doctor.class) {
+        else if (UserManager.getCurrentUserType().equals("Doctor")) {
             sc.switchToDoctorPage(event);
         }
-        else if (UserManager.getCurrentUser().getClass() == Nurse.class) {
+        else if (UserManager.getCurrentUserType().equals("Nurse")) {
             sc.switchToNursePage(event);
         }
     }
