@@ -1,10 +1,14 @@
 package sample;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.*;
 
 public class ProfilePageController {
     public String height;
@@ -12,29 +16,47 @@ public class ProfilePageController {
     public String bodyTemp;
     public String bloodPressure;
 
-    public Button saveChangesButton;
     public Button backButton;
-    public TextField heightField;
-    public TextField weightField;
-    public TextField bodyTempField;
-    public TextField bloodPressureField;
+    public VBox visitBox;
+    public Label dateLabel;
+    public Label heightLabel;
+    public Label weightLabel;
+    public Label bodyTempLabel;
+    public Label bloodPressureLabel;
+    public Label reasonForVisitLabel;
     public SceneController sc = new SceneController();
 
-    public void handleSaveChangesButton() {
-        if(heightField != null) {
-            height = heightField.getText();
-        } //else do nothing
-        if(weightField != null) {
-            weight = weightField.getText();
-        } //else do nothing
-        if(bodyTempField != null) {
-            bodyTemp = bodyTempField.getText();
-        } //else do nothing
-        if(bloodPressureField != null) {
-            bloodPressure = bloodPressureField.getText();
-        } //else do nothing
-        System.out.println("Saved New Patient Info");
+
+
+    @FXML
+    public void initialize() {
+        ToggleButton tempButton;
+        ToggleGroup tg = new ToggleGroup();
+        for (int i = 0; i < UserManager.getCurrentPatient().getVisits().size(); i++) {
+            tempButton = new ToggleButton(UserManager.getCurrentPatient().getVisits().get(i).getDate().toString());
+            tempButton.setOnAction(this::handleClickVisit);
+            tempButton.setMinWidth(198);
+            tempButton.setToggleGroup(tg);
+            visitBox.getChildren().add(tempButton);
+        }
     }
+
+    public void handleClickVisit(ActionEvent event) {
+        String selectedDate = ((ToggleButton)event.getSource()).getText();
+        int j = 0;
+        for(int i = 0; i < UserManager.getCurrentPatient().getVisits().size(); i++) {
+            if(UserManager.getCurrentPatient().getVisits().get(i).getDate().toString() == selectedDate) {
+                j = i;
+            }
+        }
+        dateLabel.setText(selectedDate);
+        heightLabel.setText(Float.toString(UserManager.getCurrentPatient().getVisits().get(j).getHeight()));
+        weightLabel.setText(Float.toString(UserManager.getCurrentPatient().getVisits().get(j).getWeight()));
+        bodyTempLabel.setText(Float.toString(UserManager.getCurrentPatient().getVisits().get(j).getBodyTemp()));
+        bloodPressureLabel.setText(Float.toString(UserManager.getCurrentPatient().getVisits().get(j).getBloodPressure()));
+        reasonForVisitLabel.setText(UserManager.getCurrentPatient().getVisits().get(j).getReasonForVisit());
+    }
+
 
     public void handleBackButton (ActionEvent event) throws IOException {
         if (UserManager.getCurrentUserType().equals("Patient")) {
