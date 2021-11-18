@@ -18,7 +18,7 @@ public class ProfilePageController {
 
     public Button backButton;
     public VBox visitBox;
-    public Button visitButton;
+    public Label dateLabel;
     public Label heightLabel;
     public Label weightLabel;
     public Label bodyTempLabel;
@@ -49,6 +49,7 @@ public class ProfilePageController {
                 j = i;
             }
         }
+        dateLabel.setText(selectedDate);
         heightLabel.setText(Float.toString(UserManager.getCurrentPatient().getVisits().get(j).getHeight()));
         weightLabel.setText(Float.toString(UserManager.getCurrentPatient().getVisits().get(j).getWeight()));
         bodyTempLabel.setText(Float.toString(UserManager.getCurrentPatient().getVisits().get(j).getBodyTemp()));

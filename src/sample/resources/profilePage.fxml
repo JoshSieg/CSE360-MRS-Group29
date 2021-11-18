@@ -41,12 +41,12 @@
       </VBox>
       <VBox layoutX="440.0" layoutY="128.0" prefHeight="118.0" prefWidth="127.0">
          <children>
-            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
-            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
-            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
-            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
-            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
-            <Label prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label fx:id="dateLabel" prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label fx:id="heightLabel" prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label fx:id="weightLabel" prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label fx:id="bodyTempLabel" prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label fx:id="bloodPressureLabel" prefHeight="20.0" prefWidth="127.0" text="Label" />
+            <Label fx:id="reasonForVisitLabel" prefHeight="20.0" prefWidth="127.0" text="Label" />
          </children>
       </VBox>
       <VBox layoutX="334.0" layoutY="246.0" prefHeight="200.0" prefWidth="100.0" />
